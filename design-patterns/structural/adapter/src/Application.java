@@ -1,29 +1,12 @@
-import adapters.SquarePegAdapter;
-import round.RoundHole;
-import round.RoundPeg;
-import square.SquarePeg;
+import mediaplayer.impl.AudioPlayer;
 
 public class Application {
     public static void main(String[] args) {
-        // Round fits, no surprise.
-        RoundHole hole = new RoundHole(5);
-        RoundPeg rpeg = new RoundPeg(5);
-        if (hole.fits(rpeg)) {
-            System.out.println("Round peg r5 fits round hole r5.");
-        }
+        AudioPlayer audioPlayer = new AudioPlayer();
 
-        SquarePeg smallSqPeg = new SquarePeg(2);
-        SquarePeg largeSqPeg = new SquarePeg(20);
-        // hole.fits(smallSqPeg); // Won't compile.
-
-        // Adapter solves the problem.
-        SquarePegAdapter smallSqPegAdapter = new SquarePegAdapter(smallSqPeg);
-        SquarePegAdapter largeSqPegAdapter = new SquarePegAdapter(largeSqPeg);
-        if (hole.fits(smallSqPegAdapter)) {
-            System.out.println("Square peg w2 fits round hole r5.");
-        }
-        if (!hole.fits(largeSqPegAdapter)) {
-            System.out.println("Square peg w20 does not fit into round hole r5.");
-        }
+        audioPlayer.play("mp3", "beyond the horizon.mp3");
+        audioPlayer.play("mp4", "alone.mp4");
+        audioPlayer.play("vlc", "far far away.vlc");
+        audioPlayer.play("avi", "mind me.avi");
     }
 }
