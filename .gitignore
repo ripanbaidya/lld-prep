@@ -9,8 +9,10 @@
 *.iml
 *.ipr
 *.iws
+*.bkp
 
 # VS Code
+.vscode/
 **/.vscode/
 
 # IntelliJ IDEA
@@ -43,5 +45,6 @@
 **/*.kotlin
 
 # Allow essential project files
-!.gitignore
+.gitignore
 !README.md
+./resources
